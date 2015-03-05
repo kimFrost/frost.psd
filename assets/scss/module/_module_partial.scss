@@ -1,0 +1,98 @@
+
+/* Partial
+---------------------------------------------------------------*/
+
+// Mixin
+
+// Structure
+.partial {
+	@include clearfix();
+	display: block;
+	position: relative; 
+	width: 100%;
+	height: auto;
+	padding-bottom: 50px; 
+	//min-height: 300px;
+	@include extendPoint("partial");
+	.partial-content {
+		@include clearfix();
+		margin: 0 auto;
+		z-index: 1;
+		position: relative;
+		width: $contentWidth;
+		@include mediaQueries(tablet){
+			width: $contentWidth-tablet;
+		};
+		@include mediaQueries(mobile){
+			width: $contentWidth-mobile;
+		};
+		@include extendPoint("partial-content");
+	}
+	.partial-sticky {
+		@include transition(top 500ms ease);
+		position: absolute;
+		top: 0;
+		background-color: red;
+		width: 100%;
+		padding: 20px;
+		& + .partial-innerContent {
+			padding-top: 60px;
+		}
+		@include extendPoint("partial-sticky");
+	}
+	.partial-innerContent {
+		@include clearfix();
+		position: relative;
+		& > h1 {
+			@include fontSize(zeta);
+			color: inherit;
+			font-family: $fontSuzukiHeadline;
+			margin-bottom: 0;
+			& > [class^="icon"] {
+				color: inherit;
+				padding-right: 10px;
+			}
+		}
+		& > p,
+		& > span {
+			@include fontSize(beta);
+			color: inherit;
+		}
+		@include extendPoint("partial-innerContent"); 
+	}
+	// Test Temp
+	& {
+		@include transition(background 1500ms ease);
+	}
+	&.is-sleep {
+		//background: hotpink;
+	}
+	&.is-hover {
+		//background: dodgerblue;
+	}
+	&.is-inView{
+		//background: mediumpurple;
+	}
+	&.is-active{
+		//background: orangered;
+	}
+	@include themeThis() { 
+		%partial-innerContent {
+			color: $themeColor3;
+			& > h1 {
+				color: $themeColor1;
+			}
+			& > p,
+			& > span { 
+				color: $themeColor3;
+                //TODO Temp Icon Test
+                &.icon {
+                    color: $themeColor1;
+                }
+			}
+		}
+	}
+}
+
+// Partial types
+// Are in their own files (_module_partial-"partialname")

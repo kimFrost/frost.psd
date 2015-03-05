@@ -1,0 +1,75 @@
+.l-body {
+	position: absolute;
+	top: $headerHeight;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	.l-body-content {
+		padding: 20px;
+		ul {
+			@include ulNav();
+			li {
+				clear: both;
+			}
+		}
+		> ul {
+			> li {
+				margin-bottom: 10px;
+				background-color: rgba(255,255,255,0.1);
+				&:hover {
+					background-color: rgba(255,255,255,0.3);
+				}
+				ul {
+					margin-left: 20px;
+				}
+			}
+		}
+		.l-body-snapshot {
+			position: relative;
+			img {
+				display: block;
+				margin: 0;
+			}
+			.l-body-overlay {
+				position: absolute;
+				border: 2px solid red;
+				overflow: hidden;
+			}
+		}
+	}
+	.l-body-nav {
+		width: $bodyMenuWidth;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		background: palevioletred;
+		overflow: auto;
+		ul {
+			@include ulNav();
+			li {
+				width: 100%;
+				clear: both;
+				a {
+					width: 100%;
+					padding: 10px;
+					background: rgba(0,0,0,0.2);
+					border-top: 1px solid rgba(255,255,255,0.15);
+					border-bottom: 1px solid rgba(0,0,0,0.15);
+				}
+				li a {
+					background: rgba(0,0,0,0.4);
+				}
+			}
+		}
+	}
+	.l-body-view {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: $bodyMenuWidth;
+		bottom: 0;
+		background: cadetblue;
+		overflow: auto;
+	}
+}

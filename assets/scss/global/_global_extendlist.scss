@@ -1,0 +1,32 @@
+$extendPointList: ();
+// Extend point list mixin
+@mixin extendPoint($stringName) {
+	//@content;
+	@extend %#{$stringName} !optional;
+	$extendPointList: append($extendPointList,$stringName);
+}
+
+$styleInjectorList: ();
+@mixin styleInjector($stringName:null,$set:false) {
+	@if $stringName != null {
+		@if $set == true {
+
+		}
+		@else {
+			@content;
+		}
+	}
+}
+
+/* OLD */
+//@import "Suzuki"; 
+
+/* Extend List */
+@for $i from 1 through length($extendPointList) {
+	//$extendPoint: nth($extendPointList,$i);
+	//.color {
+		//color: test;
+		//content: "#{length($extendPointList)}";
+		//content: "#{$extendPoint}";
+	//} 
+}        

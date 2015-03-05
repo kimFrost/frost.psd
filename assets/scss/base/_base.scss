@@ -1,0 +1,62 @@
+
+/* default element styling . ie. no classes and ids */
+
+#suzuki {
+	position: relative; // Goddamit man!!
+}
+
+body {
+	background: #fff;
+	min-width: $contentWidth + ($gutterWidth * 2); 
+	font-size: 100%;
+  @include mediaQueries(tablet){
+      min-width: $contentWidth-tablet + ($gutterWidth * 2); 
+  };
+  @include mediaQueries(mobile){
+      min-width: $contentWidth-mobile + ($gutterWidth * 2); 
+  };
+}
+
+body, html, img {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  /*
+  font-family: Arial, Sans;
+  font-size: 14px;
+  color: #333; 
+  */
+}
+
+a {
+  outline: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+table, td, tr {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+
+//@for $i from 1 through 2500 {
+//	@media (width: #{$i}px) {
+//		.screenWidth {
+//			width: #{$i}px;
+//		}
+//	}
+//}

@@ -1,0 +1,12 @@
+.l-header {
+	//@include gradient(#003b53,#004561,#003146);
+	display: block;
+	height: $headerHeight;
+	z-index: 70;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: 0;
+	background: cornflowerblue;
+}

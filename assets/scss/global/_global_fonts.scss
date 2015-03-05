@@ -1,0 +1,86 @@
+
+/* Global font type */
+
+$primNavFont: "suzuki-bold", "Myriad Pro", "Arial", Sans-serif;
+$headlineFont: "suzuki-headline", "Myriad Pro", "Arial", Sans-serif;
+$fontSuzukiHeadline: "suzuki-headline", "Myriad Pro", "Arial", Sans-serif;
+$fontSuzukiBold: "suzuki-bold", "Myriad Pro", "Arial", Sans-serif;
+$fontSuzukiRegular: "suzuki-regular", "Myriad Pro", "Arial", Sans-serif;
+
+$fontContent: Arial, Helvetica, sans-serif;
+
+
+/* Global font Calculation */ 
+// Based on typeplate
+
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$measure: $font-base * $line-height;
+
+$type-scale-unit-value: rem;
+
+$alpha: 12;
+$beta: 14;
+$gamma: 18;
+$delta: 24;
+$epsilon: 32;
+$zeta: 48;
+$eta: 60;
+$theta: 72;
+$iota: 90;
+$kappa: 117;
+
+$fontsizes: alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta, eta $eta, theta $theta, iota $iota, kappa $kappa;
+
+@mixin modular-scale($scale, $base, $value, $measure:"", $lineHeightMultiplier:1.0) {
+	font-size: $scale#{px};
+	font-size: modular-scale($scale, $base, $value);
+	line-height: ($scale*$lineHeightMultiplier)#{px};
+	line-height: modular-scale($scale*$lineHeightMultiplier, $base, $value);
+}
+
+@function modular-scale($scale, $base, $value) {
+	// divide a given font-size by base font-size & return a relative em value
+	@return ($scale/$base)#{$value};
+}
+
+@each $size in $fontsizes {
+	.#{nth($size, 1)},
+	%#{nth($size, 1)}  {
+		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+	} 
+}
+
+
+@mixin fontSize($fontsizename:gamma,$lineHeightMultiplier: 1.0) {
+	& {
+		//@extend %#{$fontsizename};
+	}
+	& {
+		@for $i from 1 through length($fontsizes) {
+			$size : nth($fontsizes,$i);
+			$sizeLabel : nth($size, 1);
+			$sizeNumber : nth($size, 2);
+			@if $sizeLabel == $fontsizename {
+				@include modular-scale($sizeNumber, $font-base, '#{$type-scale-unit-value}', $measure, $lineHeightMultiplier);
+			}
+		}
+	}
+}
+
+// Set base font size, from which all will scale
+html {
+	font-size: percentage($font-size / 100);
+}
+
+//@extend %alpha;
+//@extend %beta;
+//@extend %gamma;
+//@extend %delta;
+//@extend %epsilon;
+//@extend %zeta;
+//@extend %eta;
+//@extend %theta;
+//@extend %iota;
+//@extend %kappa;

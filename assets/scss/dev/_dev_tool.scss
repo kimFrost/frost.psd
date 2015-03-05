@@ -1,0 +1,21 @@
+
+.dv-tool {
+	position: fixed;
+	z-index: 90;
+	top: 0;
+	right: 0;
+	width: 200px;
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	font-family: Arial;
+	font-size: 12px;
+	ul {
+		@include ulNav();
+		li {
+			clear: both;
+			& > ul {
+				margin-left: 10px;
+			}
+		}
+	}
+}

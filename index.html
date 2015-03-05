@@ -1,0 +1,109 @@
+<!doctype html>
+<html ng-app="LazyAss" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>LazyAss Analyzer</title>
+	<meta name="description" content="">
+
+	<!-- Twitter Bootstrap -->
+	<link rel="stylesheet" href="https://raw.github.com/twbs/bootstrap/master/docs/assets/css/bootstrap.css">
+
+	<!-- Angular -->
+	<script src="scripts/head.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/LazyAss.css">
+</head>
+<body>
+
+<div id="lazyAss" class="l-lazyAss">
+	<div class="dv-tool">
+		<ul>
+			<li ng-repeat="item in data.test">{{$index}} : {{item.title}}</li>
+		</ul>
+	</div>
+	<header class="l-header">
+		<h1>LazyAss Analyzer</h1>
+	</header>
+	<div class="l-body">
+		<div class="l-body-nav">
+			<ul>
+				<li>
+					<a href="#" ng-click="reloadPsdList()">Reload PSD list</a>
+				</li>
+				<li ng-repeat="psd in data.psdList">
+					<a href="#" class="l-body-navPsd" ng-click="loadPsd(psd.title)">{{psd.title}}</a>
+				</li>
+				<!--
+				<li>
+					<a href="#" ng-click="addCollection()">+ Add PSD manually</a>
+				</li>
+				-->
+			</ul>
+			<!--ul>li*6>a[href="#"]{prim nav link}-->
+		</div>
+		<div class="l-body-view">
+			<div class="l-body-content">
+				<p>Is loading snapshot: {{data.analyse.snapshot.loading}}</p>
+				<p>Is loading tree: {{data.analyse.loading}}</p>
+				<div class="l-body-snapshot">
+					<img ng-src="{{data.analyse.snapshot.img}}" />
+					<div class="l-body-overlay" ng-style="{'left':data.overlay.metric.left, 'top':data.overlay.metric.top, 'width':data.overlay.metric.width, 'height':data.overlay.metric.height};"></div>
+				</div>
+				<ul>
+					<li ng-repeat="font in data.analyse.fonts" ng-click="showOverlay(font.metric.left, font.metric.top, font.metric.width, font.metric.height)">
+						<span ng-bind="font.css"></span>
+						<br />
+						<span ng-bind="font.value"></span>
+						<br />
+						Left:<span ng-bind="font.metric.left"></span>
+						Top:<span ng-bind="font.metric.top"></span>
+						Width:<span ng-bind="font.metric.width"></span>
+						Hegiht:<span ng-bind="font.metric.height"></span>
+						<ul>
+							<li ng-repeat="fontName in font.fonts">
+								<span ng-bind="fontName"></span>
+							</li>
+						</ul>
+						<ul>
+							<li ng-repeat="color in font.colors">
+								<span ng-bind="color" style="background-color: rgb({{color[0]}},{{color[1]}},{{color[2]}});"></span>
+							</li>
+						</ul>
+						<ul>
+							<li ng-repeat="fontSize in font.fontSizes">
+								<span ng-bind="fontSize"></span>
+							</li>
+						</ul>
+
+					</li>
+				</ul>
+				<ul>
+					<li ng-repeat="font in data.analyse.fonts">
+						<ul>
+							<li ng-repeat="fontName in font.fonts">
+								<span ng-bind="fontName"></span>
+							</li>
+						</ul>
+
+					</li>
+				</ul>
+				<ul>
+					<li ng-repeat="fontSize in data.analyse.fontSizes">
+						<span ng-bind="fontSize"></span>
+					</li>
+				</ul>
+				<ul>
+					<li ng-repeat="color in data.analyse.colors" style="background-color: rgb({{color[0]}},{{color[1]}},{{color[2]}});">
+						<span ng-bind="color"></span>
+					</li>
+				</ul>
+				<!--<div ng-view></div>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="scripts/LazyAss.js"></script>
+</body>
+</html>

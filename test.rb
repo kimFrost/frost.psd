@@ -1,0 +1,1 @@
+require 'psd'; puts 'Hello from test'; puts 'Hello from test2';

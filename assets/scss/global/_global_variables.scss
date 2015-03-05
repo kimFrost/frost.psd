@@ -1,0 +1,36 @@
+
+/* Global Variables */
+
+// Options booleans
+$useAdaptive: false; // Media Querie mixin will skip if this ain't true
+
+
+// Grid variables
+$contentWidth: 940px;
+$gridSize: 12;
+$gridSpacing: 20px; 
+$colomnWidth: $contentWidth / $gridSize;
+$gutterWidth: 20px;
+
+// Layout sizes
+$headerHeight: 60px;
+$bodyMenuWidth: 200px;
+
+// Media Queries and Labels
+$mediaQueries: mobile 1px 759px, tablet 760px 959px, desktop 960px;
+
+// Media Queries Content Widths
+$contentWidth-mobile: 560px;
+$contentWidth-tablet: 740px;
+$contentWidth-desktop: 940px;
+
+
+// Colorsets - Supports up to 5 colors each
+// ({label} {color1} {color2} {color3} {color4} {color5})
+@include newColor(ass brown brown brown);
+@include newColor(hest blue red yellow purple navy);
+
+@include newColor(nature #9bca3c #fff #000);
+@include newColor(lightnature rgba(155,202,60,0.6) #fff #000);
+@include newColor(navy #00bcea #fff #000);
+

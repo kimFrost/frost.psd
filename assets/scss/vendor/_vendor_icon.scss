@@ -1,0 +1,264 @@
+@font-face {
+	font-family: 'Suzuki';
+	src:url('/fonts/Suzuki.eot');
+	src:url('/fonts/Suzuki.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/Suzuki.woff') format('woff'),
+		url('/fonts/Suzuki.ttf') format('truetype'),
+		url('/fonts/Suzuki.svg#Suzuki') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'Suzuki';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-service-wrench, .icon-service-wheel, .icon-service-tools, .icon-service-tank, .icon-service-sparkplug, .icon-service-piston, .icon-service-man, .icon-service-lightning_car, .icon-service-gears, .icon-service-gear, .icon-service-fuel_meter, .icon-service-engine, .icon-service-dummy, .icon-finans-piggybank, .icon-finans-percent, .icon-finans-money, .icon-driving-tank, .icon-driving-stopwatch, .icon-driving-stop, .icon-driving-sign, .icon-driving-road, .icon-driving-helmet, .icon-driving-flag, .icon-driving-drop, .icon-driving-cone, .icon-cars-wheel, .icon-cars-test-dummy, .icon-cars-passenger, .icon-cars-music, .icon-cars-keys, .icon-cars-key3, .icon-cars-key2, .icon-UI-tjeck, .icon-UI-steeringwheel, .icon-UI-speedometer, .icon-UI-slides-w-car2, .icon-UI-slides-w-car, .icon-UI-slides, .icon-UI-road, .icon-UI-recycle-car, .icon-UI-price-tag, .icon-UI-plus-circle, .icon-UI-plus2, .icon-UI-plus, .icon-UI-pin-suzuki, .icon-UI-pin, .icon-UI-moviestrip, .icon-UI-minus-circle, .icon-UI-close, .icon-UI-car360, .icon-UI-car1, .icon-UI-camera, .icon-UI-arrow-up-circle, .icon-UI-arrow-up, .icon-UI-arrow-right-circle, .icon-UI-arrow-right, .icon-UI-arrow-left-circle, .icon-UI-arrow-left, .icon-UI-arrow-down-circle, .icon-UI-arrow-down, .icon-UI-arrow-box, .icon-UI-alert2, .icon-UI-alert1, .icon-enviroment-recycle, .icon-enviroment-oil, .icon-enviroment-leaf, .icon-enviroment-bulb, .icon-cars-cubes, .icon-cars-brake, .icon-cars-4doors, .icon-cars-2doors, .icon-UI-minus, .icon-UI-map, .icon-UI-magnifier, .icon-UI-keys {
+	font-family: 'Suzuki';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-service-wrench:before {
+	content: "\e000";
+}
+.icon-service-wheel:before {
+	content: "\e001";
+}
+.icon-service-tools:before {
+	content: "\e002";
+}
+.icon-service-tank:before {
+	content: "\e003";
+}
+.icon-service-sparkplug:before {
+	content: "\e004";
+}
+.icon-service-piston:before {
+	content: "\e005";
+}
+.icon-service-man:before {
+	content: "\e006";
+}
+.icon-service-lightning_car:before {
+	content: "\e007";
+}
+.icon-service-gears:before {
+	content: "\e008";
+}
+.icon-service-gear:before {
+	content: "\e009";
+}
+.icon-service-fuel_meter:before {
+	content: "\e00a";
+}
+.icon-service-engine:before {
+	content: "\e00b";
+}
+.icon-service-dummy:before {
+	content: "\e00c";
+}
+.icon-finans-piggybank:before {
+	content: "\e00d";
+}
+.icon-finans-percent:before {
+	content: "\e00e";
+}
+.icon-finans-money:before {
+	content: "\e00f";
+}
+.icon-driving-tank:before {
+	content: "\e010";
+}
+.icon-driving-stopwatch:before {
+	content: "\e011";
+}
+.icon-driving-stop:before {
+	content: "\e012";
+}
+.icon-driving-sign:before {
+	content: "\e013";
+}
+.icon-driving-road:before {
+	content: "\e014";
+}
+.icon-driving-helmet:before {
+	content: "\e015";
+}
+.icon-driving-flag:before {
+	content: "\e016";
+}
+.icon-driving-drop:before {
+	content: "\e017";
+}
+.icon-driving-cone:before {
+	content: "\e018";
+}
+.icon-cars-wheel:before {
+	content: "\e019";
+}
+.icon-cars-test-dummy:before {
+	content: "\e01a";
+}
+.icon-cars-passenger:before {
+	content: "\e01b";
+}
+.icon-cars-music:before {
+	content: "\e01c";
+}
+.icon-cars-keys:before {
+	content: "\e01d";
+}
+.icon-cars-key3:before {
+	content: "\e01e";
+}
+.icon-cars-key2:before {
+	content: "\e01f";
+}
+.icon-UI-tjeck:before {
+	content: "\e020";
+}
+.icon-UI-steeringwheel:before {
+	content: "\e021";
+}
+.icon-UI-speedometer:before {
+	content: "\e022";
+}
+.icon-UI-slides-w-car2:before {
+	content: "\e023";
+}
+.icon-UI-slides-w-car:before {
+	content: "\e024";
+}
+.icon-UI-slides:before {
+	content: "\e025";
+}
+.icon-UI-road:before {
+	content: "\e026";
+}
+.icon-UI-recycle-car:before {
+	content: "\e027";
+}
+.icon-UI-price-tag:before {
+	content: "\e028";
+}
+.icon-UI-plus-circle:before {
+	content: "\e029";
+}
+.icon-UI-plus2:before {
+	content: "\e02a";
+}
+.icon-UI-plus:before {
+	content: "\e02b";
+}
+.icon-UI-pin-suzuki:before {
+	content: "\e02c";
+}
+.icon-UI-pin:before {
+	content: "\e02d";
+}
+.icon-UI-moviestrip:before {
+	content: "\e02e";
+}
+.icon-UI-minus-circle:before {
+	content: "\e02f";
+}
+.icon-UI-close:before {
+	content: "\e030";
+}
+.icon-UI-car360:before {
+	content: "\e031";
+}
+.icon-UI-car1:before {
+	content: "\e032";
+}
+.icon-UI-camera:before {
+	content: "\e033";
+}
+.icon-UI-arrow-up-circle:before {
+	content: "\e034";
+}
+.icon-UI-arrow-up:before {
+	content: "\e035";
+}
+.icon-UI-arrow-right-circle:before {
+	content: "\e036";
+}
+.icon-UI-arrow-right:before {
+	content: "\e037";
+}
+.icon-UI-arrow-left-circle:before {
+	content: "\e038";
+}
+.icon-UI-arrow-left:before {
+	content: "\e039";
+}
+.icon-UI-arrow-down-circle:before {
+	content: "\e03a";
+}
+.icon-UI-arrow-down:before {
+	content: "\e03b";
+}
+.icon-UI-arrow-box:before {
+	content: "\e03c";
+}
+.icon-UI-alert2:before {
+	content: "\e03d";
+}
+.icon-UI-alert1:before {
+	content: "\e03e";
+}
+.icon-enviroment-recycle:before {
+	content: "\e03f";
+}
+.icon-enviroment-oil:before {
+	content: "\e040";
+}
+.icon-enviroment-leaf:before {
+	content: "\e041";
+}
+.icon-enviroment-bulb:before {
+	content: "\e042";
+}
+.icon-cars-cubes:before {
+	content: "\e043";
+}
+.icon-cars-brake:before {
+	content: "\e044";
+}
+.icon-cars-4doors:before {
+	content: "\e045";
+}
+.icon-cars-2doors:before {
+	content: "\e046";
+}
+.icon-UI-minus:before {
+	content: "\e047";
+}
+.icon-UI-map:before {
+	content: "\e048";
+}
+.icon-UI-magnifier:before {
+	content: "\e049";
+}
+.icon-UI-keys:before {
+	content: "\e04a";
+}
